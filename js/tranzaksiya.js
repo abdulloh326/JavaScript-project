@@ -8,13 +8,12 @@ const xarajat = document.querySelector(".xarajat");
 const daromad = document.querySelector(".daromad");
 const qoshish = document.querySelector("#qoshish");
 const content = document.querySelector(".content");
-const saerch = document.querySelector(".saerch")
-const btns = document.querySelector(".btns").children
+const saerch = document.querySelector(".saerch");
+const btns = document.querySelector(".btns").children;
 const nomi = document.getElementsByName("nomi")[0];
 const narx = document.getElementsByName("narx")[0];
 const kategoriya = document.getElementsByName("kategoriya")[0];
 const sana = document.getElementsByName("sana")[0];
-
 
 // Bu data shu yerda turishi kerak
 let obj = {
@@ -29,8 +28,8 @@ let obj = {
 async function createTranzaction(id) {
   if (id) {
     try {
-      let res = await fetch(`${api}/${id}`)
-      res = await res.json()
+      let res = await fetch(`${api}/${id}`);
+      res = await res.json();
       delete res.id;
       obj = res;
       modal.style.cssText = `
@@ -38,8 +37,8 @@ async function createTranzaction(id) {
   `;
       blur.style.cssText = `
       visibility: visible;  `;
-      qoshish.textContent = "Taxrirlash"
-      qoshish.setAttribute("id", id)
+      qoshish.textContent = "Taxrirlash";
+      qoshish.setAttribute("id", id);
 
       nomi.value = res.nomi;
       narx.value = res.narx;
@@ -48,21 +47,18 @@ async function createTranzaction(id) {
       if (res.turi) {
         daromad.style.cssText = `
           border: 1px solid #00A63E;
-      `
+      `;
         xarajat.style.cssText = `
           border: 1px solid #0000001A;
-      `
-
+      `;
       } else {
         xarajat.style.cssText = `border: 1px solid #E7000B;
   `;
         daromad.style.cssText = `border: 1px solid #0000001A;
   `;
       }
-
-
     } catch (error) {
-      alert(error.message)
+      alert(error.message);
     }
   } else {
     modal.style.cssText = `
@@ -75,15 +71,15 @@ async function createTranzaction(id) {
 }
 
 add.addEventListener("click", function () {
-  qoshish.textContent = "Qoshish"
-  qoshish.removeAttribute("id")
+  qoshish.textContent = "Qoshish";
+  qoshish.removeAttribute("id");
   nomi.value = "";
   narx.value = "";
   kategoriya.value = "";
   sana.value = "";
 
-  xarajat.style.cssText = `border: 1px solid #0000001A`
-  daromad.style.cssText = `border: 1px solid #0000001A`
+  xarajat.style.cssText = `border: 1px solid #0000001A`;
+  daromad.style.cssText = `border: 1px solid #0000001A`;
 
   createTranzaction();
 });
@@ -103,8 +99,6 @@ close.addEventListener("click", function () {
 cencel.addEventListener("click", function () {
   closeModal();
 });
-
-
 
 xarajat.addEventListener("click", function () {
   xarajat.style.cssText = `
@@ -132,7 +126,7 @@ function getInputValue(e) {
 }
 
 qoshish.addEventListener("click", function () {
-  let attr = qoshish.getAttribute("id")
+  let attr = qoshish.getAttribute("id");
   let arr = Object.values(obj);
   let isChecked = arr.every((v) => `${v}`);
   if (attr) {
@@ -154,7 +148,6 @@ qoshish.addEventListener("click", function () {
         .catch((error) => alert(error.message));
     }
   } else {
-
     if (isChecked) {
       fetch(api, {
         method: "POST",
@@ -172,7 +165,6 @@ qoshish.addEventListener("click", function () {
         })
         .catch((error) => alert(error.message));
     }
-
   }
 });
 
@@ -181,15 +173,17 @@ async function createUI(value) {
   let res = await fetch(api);
   res = await res.json();
   if (typeof value === "string") {
-    res = res.filter((obj) => obj.nomi.toLowerCase().includes(value.toLowerCase()))
+    res = res.filter((obj) =>
+      obj.nomi.toLowerCase().includes(value.toLowerCase()),
+    );
   } else if (typeof value === "boolean") {
-    saerch.value = ""
+    saerch.value = "";
     if (value) {
-      res = res.filter((obj) => obj.turi)
+      res = res.filter((obj) => obj.turi);
     } else {
-      res = res.filter((obj) => !obj.turi)
+      res = res.filter((obj) => !obj.turi);
     }
-  } else saerch.value = ""
+  } else saerch.value = "";
   content.innerHTML = "";
   res.forEach((obj) => {
     let item = document.createElement("div");
@@ -226,18 +220,19 @@ async function createUI(value) {
     left.append(titleBox);
 
     let p2 = document.createElement("p");
-    let sum = Number(obj.narx).toFixed(1)
-      .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    let sum = Number(obj.narx)
+      .toFixed(1)
+      .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     p2.textContent = `${obj.turi ? "+ " : "- "}${sum}`;
     p2.style.cssText = `color: ${obj.turi ? "#00a63e" : "#e7000b"}`;
     let action = document.createElement("div");
     action.setAttribute("class", "action");
     let edit = document.createElement("img");
-    edit.addEventListener("click", () => editAction(obj.id))
+    edit.addEventListener("click", () => editAction(obj.id));
     edit.setAttribute("src", "../assets/icons/edit.svg");
     let del = document.createElement("img");
     del.setAttribute("src", "../assets/icons/del.svg");
-    del.addEventListener("click", () => delAction(obj.id))
+    del.addEventListener("click", () => delAction(obj.id));
     action.append(edit);
     action.append(del);
     right.append(p2);
@@ -248,25 +243,23 @@ async function createUI(value) {
 }
 createUI();
 
-
 async function editAction(id) {
-  createTranzaction(id)
-
+  createTranzaction(id);
 }
 
 // DELETE - action
 async function delAction(id) {
   if (id) {
-    let ok = confirm("Rostdanham ham ochirilsinmi?")
+    let ok = confirm("Rostdanham ham ochirilsinmi?");
     if (ok) {
       try {
-        let res = await fetch(`${api}/${id}`, { method: "DELETE" })
+        let res = await fetch(`${api}/${id}`, { method: "DELETE" });
         if (res.status >= 200 && res.status < 300) {
-          alert("ochirildi")
+          alert("ochirildi");
           createUI();
         }
       } catch (error) {
-        alert(error.message)
+        alert(error.message);
       }
     }
   }
@@ -274,18 +267,16 @@ async function delAction(id) {
 
 saerch.addEventListener("input", function (e) {
   let value = e.target.value;
-  createUI(value)
-
-})
+  createUI(value);
+});
 
 btns[0].addEventListener("click", function () {
-
-  createUI()
-})
+  createUI();
+});
 
 btns[1].addEventListener("click", function () {
-  createUI(true)
-})
+  createUI(true);
+});
 btns[2].addEventListener("click", function () {
-  createUI(false)
-})
+  createUI(false);
+});
