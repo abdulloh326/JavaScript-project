@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/tranzaksiya.css" />
+  </head>
+  <body>
+    <header class="box first">
+      <div class="logo">
+        <img src="./assets/icons/logo.svg" alt="" />
+      </div>
+      <div class="logo__title">
+        <h2>Xarajatlar</h2>
+        <p>Boshqaruv tizimi</p>
+      </div>
+    </header>
+
+    <nav class="box one">
+      <ul>
+        <li>
+          <a href="./dashboard.html">
+            <img src="./assets/icons/dashboard.svg" alt="" />
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            <img src="./assets/icons/tranzaksiyalar.svg" alt="" />
+            Tranzaksiyalar
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./assets/icons/kategoriya.svg" alt="" />
+            Kategoriyalar
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./assets/icons/statistika.svg" alt="" />
+            Statistika
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./assets/icons/profile.svg" alt="" />
+            Profil
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="box two">
+      <div class="title">
+        <h1>Tranzaksiyalar</h1>
+        <p>Barcha xarajat va daromadlar</p>
+      </div>
+
+      <button id="add">
+        <img src="./assets/icons/plus.svg" alt="" />
+        <span>Yangi tranzaksiya</span>
+      </button>
+    </header>
+
+    <main class="box twelve">
+      <div class="item">
+        <input class="saerch" type="text" placeholder="Qidirish..." />
+        <img src="./assets/icons/search.svg" alt="" />
+
+        <div class="btns">
+          <button>Barchasi</button>
+          <button>Daromad</button>
+          <button>Xarajat</button>
+        </div>
+      </div>
+
+      <div class="content"></div>
+    </main>
+
+    <footer class="box seventeen">
+      <span>Tranzaksiya</span>
+      <span>&copy; Algoritm 2026</span>
+    </footer>
+
+    <div class="modal">
+      <div class="title">
+        <strong>Yangi tranzaksiya</strong>
+        <img class="close" src="./assets/icons/close.svg" alt="" />
+      </div>
+
+      <div class="line"></div>
+
+      <div class="form">
+        <div class="inp__box">
+          <label for="">Nomi</label>
+          <input
+            type="text"
+            placeholder="Masalan: Supermarket"
+            name="nomi"
+            oninput="getInputValue(this)"
+          />
+        </div>
+        <div class="inp__box">
+          <label for="">Narx (so'm)</label>
+          <input
+            type="number"
+            placeholder="0"
+            name="narx"
+            oninput="getInputValue(this)"
+          />
+        </div>
+        <div class="inp__box">
+          <label for="">Kategoriya</label>
+          <input
+            type="text"
+            placeholder="Masalan: Ovqat"
+            name="kategoriya"
+            oninput="getInputValue(this)"
+          />
+        </div>
+        <div class="inp__box">
+          <label for="">Sana</label>
+          <input type="date" name="sana" oninput="getInputValue(this)" />
+        </div>
+        <div class="inp__box">
+          <label for="">Turi</label>
+          <div class="btns">
+            <button class="xarajat">
+              <img src="./assets/icons/up.svg" alt="" />
+              Xarajat
+            </button>
+            <button class="daromad">
+              <img src="./assets/icons/down.svg" alt="" />
+              Daromad
+            </button>
+          </div>
+        </div>
+        <div class="inp__box">
+          <button id="cencel">Bekor qilish</button>
+          <button id="qoshish">Qo'shish</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="blur"></div>
+
+    <script src="./js/tranzaksiya.js"></script>
+  </body>
+</html>

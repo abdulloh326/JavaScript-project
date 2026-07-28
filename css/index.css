@@ -1,0 +1,117 @@
+body {
+  height: 100vh;
+  background: linear-gradient(#eff6ff, #f0fdf4);
+  display: grid;
+  place-content: center;
+}
+
+form {
+  width: 448px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+form .icon__box {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(125deg, #2b7fff, #00c950);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form h1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+form p:nth-child(3) {
+  color: #717182;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+form .inp__box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+}
+
+form .inp__box img:first-child {
+  position: absolute;
+  width: 16px;
+  bottom: 11px;
+  left: 12px;
+}
+
+form .inp__box .eye {
+  display: none;
+}
+
+form .inp__box .eye,
+form .inp__box .eye__slash {
+  position: absolute;
+  width: 16px;
+  bottom: 11px;
+  right: 12px;
+  cursor: pointer;
+}
+
+form .inp__box label {
+  font-size: 14px;
+  color: #0a0a0a;
+  line-height: 20px;
+}
+
+form .inp__box input {
+  padding: 10px 12px 10px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f3f3f5;
+  outline: none;
+}
+
+form .inp__box input[type="password"] {
+  padding: 10px 40px;
+}
+
+form .inp__box input::placeholder {
+  color: #0a0a0a80;
+}
+
+form button {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form p:last-child {
+  font-size: 14px;
+  color: #717182;
+  font-weight: 200;
+}
+
+form p:last-child a {
+  color: #030213;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+form p:last-child a:hover {
+  text-decoration: underline;
+}

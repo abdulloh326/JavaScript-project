@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+  </head>
+  <body>
+    <header class="box first">
+      <div class="logo">
+        <img src="./assets/icons/logo.svg" alt="" />
+      </div>
+      <div class="logo__title">
+        <h2>Xarajatlar</h2>
+        <p>Boshqaruv tizimi</p>
+      </div>
+    </header>
+
+    <nav class="box one">
+      <ul>
+        <li>
+          <a href="#" class="active">
+            <img src="./assets/icons/dashboard.svg" alt="" />
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="./tranzaksiya.html">
+            <img src="./assets/icons/tranzaksiyalar.svg" alt="" />
+            Tranzaksiyalar
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./assets/icons/kategoriya.svg" alt="" />
+            Kategoriyalar
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./assets/icons/statistika.svg" alt="" />
+            Statistika
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./assets/icons/profile.svg" alt="" />
+            Profil
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="box two">
+      <div class="title">
+        <h1>Dashboard</h1>
+        <p>Xarajatlaringizni boshqaring</p>
+      </div>
+
+      <div class="date">
+        <img src="./assets/icons/date.svg" alt="" />
+        <p id="current__date"></p>
+      </div>
+    </header>
+
+    <main class="box seven">
+      <div class="shadow">
+        <div class="balans">
+          <span>Balans</span>
+          <strong id="balans__sum">0 so'm</strong>
+          <span>Umumiy balans</span>
+        </div>
+
+        <img src="./assets/icons/balans.svg" alt="" />
+      </div>
+    </main>
+
+    <main class="box eight">
+      <div class="shadow">
+        <div class="daromad">
+          <span>Daromad</span>
+          <strong id="daromad__sum">0 so'm</strong>
+          <span>Ushbu oy</span>
+        </div>
+
+        <img src="./assets/icons/daromad.svg" alt="" />
+      </div>
+    </main>
+
+    <main class="box ten">
+      <div class="shadow">
+        <div class="xarajat">
+          <span>Xarajat</span>
+          <strong id="xarajat__sum">0 so'm</strong>
+          <span>Ushbu oy</span>
+        </div>
+
+        <img src="./assets/icons/xarajat.svg" alt="" />
+      </div>
+    </main>
+
+    <main class="box twelve">
+      <div class="item">
+        <p>So'nggi tranzaksiyalar</p>
+        <p>
+          <img src="./assets/icons/all_eye.svg" alt="" />
+          <span>Barchasini ko'rish</span>
+        </p>
+      </div>
+
+      <div class="content"></div>
+    </main>
+
+    <main class="box fourteen">
+      <p>Kategoriyalar bo'yicha</p>
+
+      <div class="grafik">
+        <div class="item">
+          <div class="text">
+            <span>Ovqat</span>
+            <span>850,000 so'm</span>
+          </div>
+          <div class="parent">
+            <div class="child"></div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="text">
+            <span>Transport</span>
+            <span>420,000 so'm</span>
+          </div>
+          <div class="parent">
+            <div class="child"></div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="text">
+            <span>To'lovlar</span>
+            <span>650,000 so'm</span>
+          </div>
+          <div class="parent">
+            <div class="child"></div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="text">
+            <span>O'yin-kulgi</span>
+            <span>320,000 so'm</span>
+          </div>
+          <div class="parent">
+            <div class="child"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="box seventeen">
+      <span>Tranzaksiya</span>
+      <span>&copy; Algoritm 2026</span>
+    </footer>
+    <script src="./js/dashboard.js"></script>
+  </body>
+</html>
